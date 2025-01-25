@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Planet Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f8ff;
+        }
+
+        #fact-container {
+            text-align: center;
+            margin-bottom: 20px;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+        }
+
+        #fact {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        #detail {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #ffffff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div id="fact-container">
+        <div id="fact">Click the button to see a fact!</div>
+        <div id="detail"></div>
+    </div>
+    <button onclick="showRandomFact()">Show Random Fact</button>
+
+    <script>
+        const facts = [
+            {
+                fact: "A day on Mercury is longer than a year.",
+                detail: "It takes 88 Earth days to orbit the Sun but 176 Earth days to complete a single day-night cycle."
+            },
+            {
+                fact: "Venus rotates in the opposite direction of most planets.",
+                detail: "The Sun rises in the west and sets in the east. It’s also the hottest planet due to its thick, heat-trapping atmosphere."
+            },
+            {
+                fact: "Earth is the only planet not named after a deity.",
+                detail: "Its name comes from Old English and Germanic words meaning 'ground.'"
+            },
+            {
+                fact: "Mars has the largest volcano in the solar system.",
+                detail: "Olympus Mons is nearly three times taller than Mount Everest!"
+            },
+            {
+                fact: "Jupiter has a gigantic storm called the Great Red Spot.",
+                detail: "This storm has been raging for at least 350 years and is large enough to fit Earth inside it about three times."
+            },
+            {
+                fact: "Saturn is the least dense planet.",
+                detail: "If you could find a bathtub big enough, Saturn would float in water!"
+            },
+            {
+                fact: "Uranus spins on its side.",
+                detail: "Its axis is tilted at about 98 degrees, possibly due to a collision with a massive object in the past."
+            },
+            {
+                fact: "Neptune has the fastest winds in the solar system.",
+                detail: "Winds on Neptune can reach speeds of up to 2,100 km/h (1,300 mph), faster than a supersonic jet."
+            },
+            {
+                fact: "Pluto was reclassified as a dwarf planet in 2006.",
+                detail: "Despite its small size, it has five moons, including Charon, which is nearly half its size."
+            },
+            {
+                fact: "All planets in the solar system can fit side by side between Earth and the Moon.",
+                detail: "The distance between Earth and the Moon is 384,400 km (238,855 miles)."
+            }
+        ];
+
+        function showRandomFact() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            const randomFact = facts[randomIndex];
+
+            document.getElementById("fact").textContent = randomFact.fact;
+            document.getElementById("detail").textContent = randomFact.detail;
+        }
+    </script>
+</body>
+</html>
